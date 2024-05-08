@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+ 
+}
+ 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Add some margin below the table */
+}
+ 
+/* Apply styles to table header cells */
+th {
+    background-color: #f2f2f2; /* Light gray background color */
+    padding: 8px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #ddd; /* Add bottom border */
+    padding-right: 20px; /* Add right padding for column margin */
+}
+ 
+/* Apply styles to table data cells */
+td {
+    padding: 8px; /* Add padding for spacing */
+    border-bottom: 1px solid #ddd; /* Add bottom border */
+    padding-right: 20px; /* Add right padding for column margin */
+}
+ 
+/* Apply styles to table rows */
+tr:hover {
+    background-color: #f5f5f5; /* Light gray background color on hover */
+}
+ 
+/* Apply styles to links within the table */
+a {
+    color: blue; /* Set link color to blue */
+    text-decoration: none; /* Remove underline from links */
+    margin-right: 10px; /* Add some margin between links */
+}
+ 
+/* Apply styles to form input and submit button */
+input[type="text"],
+input[type="submit"] {
+    padding: 5px; /* Add padding to input fields */
+    margin-right: 10px; /* Add margin between input fields and button */
+}
+ 

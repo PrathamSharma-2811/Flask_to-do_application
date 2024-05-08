@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Task</h1>
+        <form action="/update/{{ task.id }}" method="POST">
+            <input type="text" name="content" placeholder="Enter updated task..." value="{{ task.content }}">
+            <input type="submit" value="Update Task">
+        </form>
+        <a href="/">Back to Todo List</a>
+    </div>
+</body>
+</html>

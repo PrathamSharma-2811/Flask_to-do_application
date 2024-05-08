@@ -1,0 +1,52 @@
+{% block head %}
+<title>TASKS TO BE DONE</title>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: black;
+    }
+    .actions a {
+        margin-right: 10px;
+    }
+</style>
+{% endblock %}
+ 
+{% block body %}
+<h1 style="text-align: center;">TO-DO List</h1>
+<div class="content">
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Action</th>
+        </tr>
+ 
+        {% for task in tasks %}
+        <tr>
+            <td>{{task.content}}</td>
+            <td>{{task.date_created.date()}}</td>
+            <td class="actions">
+                <a href="/delete/{{task.id}}">Delete</a>
+                <a href="/update/{{task.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+    <FORM action="/" method="POST">
+        <input type="text" name="content" id="'content">
+        <input type="submit" value="add task">
+ 
+ 
+    </FORM>
+</div>
+<hr />
+{% endblock %}

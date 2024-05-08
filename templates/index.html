@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.username }}</h1>
+        <h2>Your Todo List</h2>
+        <ul>
+            {% for todo in todos %}
+            <div style="display: flex; justify-content: space-between;">
+            <tr>
+                <div>
+                <td>{{ todo.content }}</td>
+                <td>{{todo.date_created.date()}}</td>
+                </div>
+                <div style="align-items: end;">
+                <td><a href="/delete/{{ todo.id }}">Delete</a></td>
+                <td><a href="/update/{{ todo.id }}">Update</a></td>
+                </div>
+            </tr>
+            </div>
+            {% endfor %}
+     
+        </ul>
+        <form action="/add" method="POST">
+            <input type="text" name="content" placeholder="Enter task...">
+            <input type="submit" value="Add Task">
+        </form>
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>
